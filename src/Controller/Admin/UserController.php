@@ -40,7 +40,7 @@ class UserController extends AbstractController
         return new JsonResponse($jsonUser, Response::HTTP_CREATED, ["Location" => $location], true);
 
     }
-
+    //fonction touver un utilisateur
     #[Route('api/user/{id}', name: 'userShow', methods: ['GET'])]
     public function userShow(User $user): Response
     {
@@ -50,7 +50,7 @@ class UserController extends AbstractController
     }
 
     //fonction modifier
-    #[Route('api/users/{id}', name:"updateUser", methods:['PUT'])]
+    #[Route('api/users/{id}', name:'updateUser', methods:['PUT'])]
 
     public function updateUser(Request $request, SerializerInterface $serializer, User $currentUser, EntityManagerInterface $em): JsonResponse 
     {
